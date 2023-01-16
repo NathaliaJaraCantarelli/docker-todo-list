@@ -1,9 +1,11 @@
 FROM node:14
 
+WORKDIR /user
+
 EXPOSE 3000
 
 ADD node_modules.tar.gz ./
 
-WORKDIR /docker/todo-app/front-end
+COPY . .
 
 ENTRYPOINT [ "npm start" ]
